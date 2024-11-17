@@ -5,7 +5,6 @@
 			<block slot="backText">返回</block>
 			<block slot="content">课班信息</block>
 		</cu-custom>
-		<view class="wrap">
 			<view class="u-tabs-box">
 				<u-tabs-swiper activeColor="#0081ff" ref="tabs" :list="list" :current="current" @change="change" :is-scroll="false" swiperWidth="750"></u-tabs-swiper>
 			</view>
@@ -333,7 +332,7 @@ page {
 			}
 		}
 		.right {
-			color: $u-type-warning-dark;
+			color: $u-warning-dark;
 			.progressBox{
 				width: 150rpx;
 				float: right;
@@ -414,8 +413,8 @@ page {
 				color: $u-tips-color;
 			}
 			.evaluate {
-				color: $u-type-primary;
-				border-color: $u-type-primary;
+				color: $u-primary;
+				border-color: $u-primary;
 			}
 		}
 	}

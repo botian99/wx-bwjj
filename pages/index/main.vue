@@ -192,11 +192,6 @@
 						color: ''
 					},
 					{
-						title: 'photoWall/photoAll',
-						name: '照片墙下载',
-						color: ''
-					},
-					{
 						title: 'finance/index',
 						name: '金融量化页',
 						color: ''

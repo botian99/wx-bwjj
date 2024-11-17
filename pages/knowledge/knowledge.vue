@@ -22,7 +22,7 @@
 			<image :src="star ? '/static/knowledge/collection_normal.svg' : '/static/knowledge/collection_true.svg'" mode="" @tap="setStar()"></image>
 			<image src="/static/knowledge/list.svg" mode=""></image>
 			<image src="/static/knowledge/report_wrong.svg" mode=""></image>
-			<image src="/static/knowledge/next.svg" mode=""></image>
+			<image src="/static/knowledge/next.svg" mode="" @tap="goToExam()"></image>
 		</view>
 	</view>
 </template>
@@ -42,6 +42,11 @@
 		methods: {
 			setStar() {
 				this.star = !this.star;
+			},
+			goToExam() {
+				uni.navigateTo({
+					url: '/pages/exam/question'
+				})
 			}
 		}
 	}

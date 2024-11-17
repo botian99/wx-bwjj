@@ -333,7 +333,7 @@ page {
 			}
 		}
 		.right {
-			color: $u-type-warning-dark;
+			color: $u-warning-dark;
 			.progressBox{
 				width: 150rpx;
 				float: right;
@@ -414,8 +414,8 @@ page {
 				color: $u-tips-color;
 			}
 			.evaluate {
-				color: $u-type-primary;
-				border-color: $u-type-primary;
+				color: $u-primary;
+				border-color: $u-primary;
 			}
 		}
 	}

@@ -8,7 +8,7 @@ import TnCustom from './components/TnCustom/TnCustom.vue'
 Vue.component('tn-custom', TnCustom)
 
 // 引入:uView-UI
-import uView from 'uview-ui';
+import uView from '@/uni_modules/uview-ui';
 Vue.use(uView);
 
 Vue.config.productionTip = false
