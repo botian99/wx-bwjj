@@ -3,30 +3,12 @@
 		<view class="background-blur"></view>
 		<cu-custom bgColor="bg-transparent" :isBack="true">
 		</cu-custom>
-		<view class="know-container-center">
-			<view class="page-size-content">
-				<view>单选</view>
-			</view>
-			<view class="know-title">
-				{{question}}
-			</view>
-			<view class="options-content">
-				<view v-for="(item,index) in options" :key="index" class="options-item"
-					:class="{selected: selected === item.id}" @tap="selectItem(item)">
-					<text>{{item.text}}</text>
-					<image src="/static/exam/selected.svg" mode="" v-show="selected === item.id"></image>
-				</view>
-			</view>
-		</view>
-		<view class="know-container-footer">
-			<image :src="star ? '/static/knowledge/collection_true.svg' : '/static/knowledge/collection_normal.svg'"
-				mode="" @tap="setStar()"></image>
-			<image src="/static/exam/eye.svg" mode=""></image>
-			<image src="/static/exam/delete.svg" mode=""></image>
-			<button class="submit-btn" @tap="submitQuestion()">
-				<image src="/static/exam/select-white.svg" style="width: 16px;width: 16px" mode=""></image>
-				<text>提交</text>
-			</button>
+		<view class="finish-container-center">
+			<image src="/static/exam/study-finish.svg" class="finish-image" mode=""></image>
+			<view style="font-family: PingFang SC;font-size: 18px;line-height: 16px; 
+				margin-bottom: 30px;margin-bottom: 30px;">本章已学完</view>
+			<button class="finish-to-share-btn">分享学习成果</button>
+			<view style="font-size: 15px; line-height: 22px; font-weight: 400;">休息一下</view>
 		</view>
 	</view>
 </template>
@@ -36,20 +18,7 @@
 		data() {
 			return {
 				question: '甲木日主，下方哪个天干为日主食神？',
-				selected: null,
-				options: [{
-					text: '甲木',
-					id: 'A',
-				}, {
-					text: '丙火',
-					id: 'B',
-				}, {
-					text: '丁火',
-					id: 'C',
-				}, {
-					text: '癸水',
-					id: 'D',
-				}],
+				answer: '丁火、丁火',
 				knowSubtitle: '四柱八字/十神',
 				star: false,
 				content: '比劫：同我为比劫，同性为比肩，异性为劫财。例如甲木日主，甲木为比肩，乙木为劫财。\n\n印绶：生我为印绶，同性为正印，异性为偏印（枭神）。例如甲木日主，壬水为偏印，癸水为正印。\n\n食伤：我生为食伤，同性为食神，异性为伤官。例如甲木日主，丙火为食神，丁火为伤官。\n\n官杀：克我为官杀，同性为七杀，异性为正官。甲木日主，庚金为七杀（偏官），辛金为正官。\n\n财星：我克为财星，同性为偏财，异性为正财。例如甲木日主，戊土为偏财，己土为正财。'
@@ -67,14 +36,10 @@
 					this.selected = option.id;
 				}
 			},
-			submitQuestion() {
-				if(this.selected === null) {
-					console.log('暂未选择');
-					return;
-				}
+			goToNextQuestion() {
 				uni.navigateTo({
-					url:'/pages/exam/answer'
-				});
+					url:'/pages/studyFinish'
+				})
 			}
 		}
 	}
@@ -89,10 +54,27 @@
 		height: 100vh;
 		width: 100vw;
 
-		.know-container-center {
+		.finish-container-center {
 			width: 100%;
 			flex-grow: 1;
 			height: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			.finish-image {
+				height: 226px;
+				width: 226px;
+				margin-bottom: 30px;
+			}
+			.finish-to-share-btn {
+				background-color: #1F2B38;
+				color: #FFFFFF;
+				margin-bottom: 30px;
+				padding: 11px 36px;
+				font-size: 15px;
+				line-height: 24px;
+			}
 		}
 
 		.know-container-footer {
@@ -158,30 +140,22 @@
 			height: 119px;
 		}
 
-		.options-content {
-			margin-top: 6px;
+		.answer-content {
 			padding: 0 30px;
-		}
 
-		.options-item {
-			margin-top: 15px;
-			height: 72px;
-			border-radius: 4px;
-			padding-left: 30px;
-			padding-right: 26px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			background-color: rgba(255, 255, 255, 0.6);
-			border: 1px solid transparent;
-
-			&.selected {
-				border: 1px solid #1F2B38;
+			.answer-text {
+				font-family: Source Han Serif SC VF;
+				font-size: 16px;
+				font-weight: 500;
+				margin-bottom: 30px;
 			}
 
-			image {
-				height: 20px;
-				width: 20px;
+			.answer-content-knowledge {
+				height: 252px;
+				font-size: 14px;
+				line-height: 23px;
+				font-weight: 400;
+				font-family: Source Han Serif SC VF;
 			}
 		}
 

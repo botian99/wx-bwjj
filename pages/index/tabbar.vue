@@ -7,7 +7,7 @@
 		<me v-if="PageCur=='me'"></me>
 		<view class="tabbar_box">
 				<view class="icon_tabbar">
-					<image src="../../static/tabBar/home_bar.svg"></image>
+					<image src="../../static/tabBar/home_bar.svg" @tap="openKnowledgeList"></image>
 				</view>
 				<view class="icon_tabbar">
 					<image src="../../static/tabBar/point_bar.svg"></image>
@@ -129,6 +129,11 @@
 					animationType: 'slide-in-bottom',
 					animationDuration: 200
 				});
+			},
+			openKnowledgeList() {
+				uni.navigateTo({
+					url: '/pages/knowledge/knowledgeList'
+				})
 			}
 		}
 	}

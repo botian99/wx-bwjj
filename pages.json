@@ -38,6 +38,31 @@
 				"navigationStyle": "custom",
 				"navigationBarTitleText": "问题页"
 			}
+		},
+		{
+			"path" : "pages/exam/answer",
+			"style" : 
+			{
+				"navigationStyle": "custom",
+				"navigationBarTitleText" : "答案页"
+			}
+		},
+		{
+			"path" : "pages/exam/studyFinish",
+			"style" : 
+			{
+				"navigationStyle": "custom",
+				"navigationBarTitleText" : "学习完成"
+			}
+		},
+		{
+			"path" : "pages/knowledge/knowledgeList",
+			"style" : 
+			{
+
+				"navigationBarTitleText": "知识库",
+				"navigationStyle": "custom"
+			}
 		}
 	],
 	"globalStyle": {
